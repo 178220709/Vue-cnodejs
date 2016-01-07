@@ -63,6 +63,8 @@
         },
         route:{
             data (transition){
+
+
                 let query = transition.to.query,tab = query.tab || 'all';
 
                 //记录首次加载的查询条件

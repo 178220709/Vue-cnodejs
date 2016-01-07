@@ -1,27 +1,51 @@
 <template>
     <!-- 全局header -->
-    <div>
-        <img class="index" src="../assets/images/index.png">
+    <nv-top></nv-top>
+
+    <div style="text-align: center ; margin: 100px 0 0 0 ">
+        <div class="container ">
+            <p style="font-size: 30px">Please input the access code </p>
+
+            <div style="margin: 30px 0 0 0 ">
+                <div class="input-group col-sm-3 " style="margin: auto">
+                    <input type="text" v-model="code" class="form-control" placeholder="access code">
+                    <span class="input-group-addon" @click="checkClick">check</span>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+
 </template>
 <script type="text/babel">
     export default {
-        ready (){
-            //console.log("will redireact")
-            setTimeout(() => {
-                this.$route.router.go({ name: 'list'});
-            },2000);
+        data(){
+            return {
+                code: ""
+            }
+        },
+        methods: {
+            checkClick(){
+                if (this.code && this.code == "json") {
+                    alert("success");
+                }else{
+                    alert("error");
+                }
+            }
+        },
+        components: {
+            'nvTop': require('../components/top.vue')
         }
+
     }
 </script>
 <style lang="sass">
-    @import '../assets/scss/iconfont/iconfont.css';
-    @import '../assets/scss/CV.scss';
-    @import '../assets/scss/github-markdown.css';
-    .index{
-        width: 100%;
-        background-color: #fff;
-        margin-top: 40%;
+    @import '../assets/bootstrap/css/bootstrap.css';
+
+    .title {
+        font-size: 30px;
+
     }
 </style>
 

@@ -8,6 +8,8 @@ import filters from './filters'
 import routerMap from './routers'
 import FastClick from 'fastclick'
 
+import util from './libs/util'
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(validator);
