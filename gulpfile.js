@@ -42,7 +42,7 @@ gulp.task('style',function() {
  */
 gulp.task('script',function(){
     gulp.src('./dist/*.js')
-    .pipe(rename({suffix:'.min'}))
+    // .pipe(rename({suffix:'.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });
